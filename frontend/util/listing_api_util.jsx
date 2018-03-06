@@ -12,6 +12,13 @@ export const fetchListing = (id) => (
   })
 )
 
+// export const getListings = (ownerId) => (
+//   $.ajax({
+//     type: 'get',
+//     url: '/api/'
+//   })
+// )
+
 export const createListing = (formData , callback) => (
   $.ajax({
     type: 'post',
