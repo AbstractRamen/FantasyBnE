@@ -9,9 +9,14 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def listings
+    @listing = Listing.where(user_id: params[:id])
+    render :listing
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :name)
+    params.require(:user).permit(:email, :password, :name, :id)
   end
 end
