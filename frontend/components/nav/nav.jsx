@@ -9,8 +9,8 @@ const sessionLinks = (login) => (
       </Link>
 
     <div className='none-user-nav-right'>
-      <div className='nav-buttons'>
-        <span className='nav-links' onClick={()=>login(user)}>Try it out!</span>
+      <div className='nav-buttons' onClick={()=>login(user)}>
+        <span className='nav-links'>Try it out!</span>
       </div>
       <div className='nav-buttons'>
         <Link className='nav-links' to="/signup">Sign Up</Link>
@@ -31,8 +31,8 @@ const personalGreeting = (currentUser, logout) => (
 
     <div className='none-user-nav-right'>
       <h2 className="header-name">Hi, {currentUser.name}!</h2>
-      <div className='nav-buttons'>
-        <span className="header-button" onClick={logout}>Log Out</span>
+      <div className='nav-buttons' onClick={logout}>
+        <span>Log Out</span>
       </div>
     </div>
   </nav>
