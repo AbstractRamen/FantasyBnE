@@ -7,8 +7,8 @@ const sessionLinks = () => (
       <div className='logo'></div>
     </Link>
     <div className='none-user-nav-right'>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Sign up!</Link>
+      <Link className='nav-buttons'to="/signup">Sign Up</Link>
+      <Link className='nav-buttons' to="/login">Log In</Link>
     </div>
   </nav>
 );
