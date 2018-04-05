@@ -33,6 +33,11 @@
   background-color: red;
 }
 
+.header-button:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
 .none-user-nav-right {
   display: flex;
   vertical-align: middle;
@@ -46,6 +51,6 @@
 .header-button {
   border: none;
   background-color: cyan;
-  font-size: 14px;
-  font-style: inherit;
+  // font-size: 14px;
+  // font-style: inherit;
 }
