@@ -3,24 +3,38 @@ import { Link } from 'react-router-dom';
 
 const sessionLinks = () => (
   <nav className="none-user-nav">
-    <Link to='/'>
-      <div className='logo'></div>
-    </Link>
+
+      <Link className='nav-buttons' to='/'>
+        <div className='logo'></div>
+      </Link>
+
     <div className='none-user-nav-right'>
-      <Link className='nav-buttons'to="/signup">Sign Up</Link>
-      <Link className='nav-buttons' to="/login">Log In</Link>
+      <div className='nav-buttons'>
+        <Link className='nav-links' to="/signup">Sign Up</Link>
+      </div>
+      <div className='nav-buttons'>
+        <Link className='nav-links' to="/login">Log In</Link>
+      </div>
     </div>
   </nav>
 );
 
 const personalGreeting = (currentUser, logout) => (
-	<hgroup className="logged-in-nav">
-    <Link to='/'>
-      <div className='logo'></div>
-    </Link>
-    <h2 className="header-name">Hi, {currentUser.name}!</h2>
-    <button className="header-button" onClick={logout}>Log Out</button>
-	</hgroup>
+  <nav className="none-user-nav">
+
+      <Link className='nav-buttons' to='/'>
+        <div className='logo'></div>
+      </Link>
+
+    <div className='none-user-nav-right'>
+
+        <h2 className="header-name">Hi, {currentUser.name}!</h2>
+      
+      <div className='nav-buttons'>
+        <button className="header-button" onClick={logout}>Log Out</button>
+      </div>
+    </div>
+  </nav>
 );
 
 const Nav = ({ currentUser, logout }) => (

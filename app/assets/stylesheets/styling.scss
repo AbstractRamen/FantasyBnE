@@ -17,17 +17,35 @@
 }
 
 .nav-buttons {
-  text-decoration: none;
-  margin: 15px;
+  padding: 0px 10px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.nav-logo {
+  align-self: center;
+
 }
 
 .nav-buttons:hover {
   cursor: pointer;
-  border-bottom: 2px solid grey;
+  background-color: red;
 }
 
 .none-user-nav-right {
   display: flex;
   vertical-align: middle;
   align-items: center;
+}
+
+.nav-links {
+  text-decoration: none;
+}
+
+.header-button {
+  border: none;
+  background-color: cyan;
+  font-size: 14px;
+  font-style: inherit;
 }
