@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const sessionLinks = (login) => (
+const sessionLinks = (login, openModal) => (
   <nav className="none-user-nav">
 
       <Link className='nav-buttons' to='/'>
@@ -9,14 +9,14 @@ const sessionLinks = (login) => (
       </Link>
 
     <div className='none-user-nav-right'>
-      <div className='nav-buttons' onClick={()=>login(user)}>
+      <div className='nav-buttons' onClick={() => login(user)}>
         <span className='nav-links'>Try it out!</span>
       </div>
-      <div className='nav-buttons'>
-        <Link className='nav-links' to="/signup">Sign Up</Link>
+      <div className='nav-buttons' onClick={() => openModal('signup')}>
+        <span className='nav-links'>Sign Up</span>
       </div>
-      <div className='nav-buttons'>
-        <Link className='nav-links' to="/login">Log In</Link>
+      <div className='nav-buttons' onClick={() => openModal('login')}>
+        <span className='nav-links'>Log In</span>
       </div>
     </div>
   </nav>
@@ -38,8 +38,8 @@ const personalGreeting = (currentUser, logout) => (
   </nav>
 );
 
-const Nav = ({ currentUser, logout, login }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(login)
+const Nav = ({ currentUser, logout, login, openModal }) => (
+  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(login, openModal)
 );
 
 const user = {
