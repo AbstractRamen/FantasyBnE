@@ -5,9 +5,9 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'Email Address',
-      name: 'What should we call you?',
-      password: 'Password'
+      email: '',
+      name: '',
+      password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,6 +36,10 @@ class SessionForm extends React.Component {
     );
   }
 
+  componentWillUnmount () {
+    this.props.clearErrors();
+  }
+
   render() {
     return (
       <div className="login-form-container">
@@ -46,30 +50,42 @@ class SessionForm extends React.Component {
               X
             </div>
             <br/>
-            <p className='login-modal-text'>
+            <div className='login-modal-text'>
+            <div className="login-form">
               {this.renderErrors()}
+            </div>
               <br/>
-            </p>
+            </div>
               <div className="login-form">
                 <input type="text"
                   value={this.state.email}
+                  placeholder='Email Address'
                   onChange={this.update('email')}
                   className="login-input"
                 />
               </div>
+
+              {this.props.formType === 'Sign Up' ? (
               <div className="login-form">
                 <br/>
                 <input type="text"
                   value={this.state.name}
+                  placeholder='What would you like us to call you?'
                   onChange={this.update('name')}
-                  className="login-input"
+                  className='login-input'
                   />
               </div>
+            ) : (null
+                )}
+
+
+
               <div className="login-form">
                 <br/>
 
                 <input type="password"
                   value={this.state.password}
+                  placeholder='Password'
                   onChange={this.update('password')}
                   className="login-input"
                 />
@@ -77,6 +93,9 @@ class SessionForm extends React.Component {
                 <div className="login-form">
                   <br/>
                 <input className="session-submit" type="submit" value={this.props.formType} />
+              </div>
+              <div className="login-input login-form">
+                Not the right form?&nbsp;{this.props.otherForm}&nbsp;instead!
               </div>
             </section>
           </form>

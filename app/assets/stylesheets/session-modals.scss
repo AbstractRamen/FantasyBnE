@@ -7,7 +7,7 @@
 }
 
 .login-input {
-  height: 20px;
+  min-height: 20px;
   margin: 10px 0px;
   width: 90%;
   line-height: 24px;
@@ -43,9 +43,18 @@
 
 .login-form-container {
   width: 536px;
-  height: 390px;
+  height: auto;
 }
 
 .session-modal-padding {
   margin: 10px;
+}
+
+.switch-session {
+  color: #008489;
+}
+
+.switch-session:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
