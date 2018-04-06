@@ -3,11 +3,11 @@
 }
 
 .none-user-nav {
-  background-color: cyan;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #DBDBDB;
 }
 
 .logo {
@@ -30,12 +30,12 @@
 
 .nav-buttons:hover {
   cursor: pointer;
-  background-color: red;
+  // background-color: red;
 }
 
 .header-button:hover {
   cursor: pointer;
-  background-color: red;
+  // background-color: red;
 }
 
 .none-user-nav-right {
