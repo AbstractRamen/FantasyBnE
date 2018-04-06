@@ -5,9 +5,9 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      name: '',
-      password: ''
+      email: 'Email Address',
+      name: 'What should we call you?',
+      password: 'Password'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -39,40 +39,48 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to FantasyBnE!
-          <br/>
-          <div onClick={this.props.closeModal} className="close-x">X</div>
-          {this.renderErrors()}
-          <div className="login-form">
+        <div className='session-modal-padding'>
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            <section className='modal-styling'>
+            <div onClick={this.props.closeModal} className="close-x">
+              X
+            </div>
             <br/>
-            <label>Email:
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Name:
-              <input type="text"
-                value={this.state.name}
-                onChange={this.update('name')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
-          </div>
-        </form>
+            <p className='login-modal-text'>
+              {this.renderErrors()}
+              <br/>
+            </p>
+              <div className="login-form">
+                <input type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="login-input"
+                />
+              </div>
+              <div className="login-form">
+                <br/>
+                <input type="text"
+                  value={this.state.name}
+                  onChange={this.update('name')}
+                  className="login-input"
+                  />
+              </div>
+              <div className="login-form">
+                <br/>
+
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                />
+                </div>
+                <div className="login-form">
+                  <br/>
+                <input className="session-submit" type="submit" value={this.props.formType} />
+              </div>
+            </section>
+          </form>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,54 @@
+.close-x {
+  padding: 20px;
+}
+
+.close-x:hover {
+  cursor: pointer;
+}
+
+.login-input {
+  height: 20px;
+  margin: 10px 0px;
+  width: 90%;
+  line-height: 24px;
+  font-size: 19px;
+  padding: 11px;
+  font-weight: 300;
+}
+
+.login-form {
+  justify-content: center;
+  display: flex;
+}
+
+.login-modal-text {
+  text-align: center;
+}
+
+.session-submit {
+  // width: 95%;
+  // line-height: 40px;
+  background: #FF5A5F;
+  // position: relative;
+  text-align: center;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 19px;
+  // height: 20px;
+  margin: 10px 0px;
+  width: 90%;
+  line-height: 24px;
+  font-size: 19px;
+  padding: 11px;
+}
+
+.login-form-container {
+  width: 536px;
+  height: 541px;
+}
+
+.session-modal-padding {
+  margin: 10px;
+}
