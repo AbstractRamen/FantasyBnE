@@ -7,6 +7,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'dynopoker'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
