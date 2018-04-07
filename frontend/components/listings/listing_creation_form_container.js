@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import ListingCreationForm from './listing_creation_form';
 import { createListing } from '../../actions/listing_actions';
 
-const mapStateToProps = ( state ) => {
-  console.log(state);
+const mapStateToProps = ({ errors }) => {
   return {
-    errors: state.errors.listing
+    errors: errors.listing
   }
 }
 
