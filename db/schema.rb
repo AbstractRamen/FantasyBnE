@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20180406204202) do
   enable_extension "plpgsql"
 
   create_table "listings", force: :cascade do |t|
-    t.integer "owner_id"
-    t.string "address"
+    t.integer "owner_id", null: false
+    t.string "address", null: false
     t.string "name"
     t.string "description"
     t.datetime "created_at", null: false

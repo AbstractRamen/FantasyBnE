@@ -23,6 +23,7 @@ class Api::ListingsController < ApplicationController
       :description,
       :owner_id,
       :picture_url
+      :address
     )
   end
 

@@ -5,7 +5,7 @@ import { signup, clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ( errors ) => {
   return {
     errors: errors.session,
     formType: 'Sign Up'

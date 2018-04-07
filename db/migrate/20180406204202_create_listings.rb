@@ -1,8 +1,8 @@
 class CreateListings < ActiveRecord::Migration[5.1]
   def change
     create_table :listings do |t|
-      t.integer :owner_id, index: true
-      t.string :address, index: true
+      t.integer :owner_id, null: false, index: true
+      t.string :address, null: false, index: true
       t.string :name
       t.string :description
 
