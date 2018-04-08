@@ -41,27 +41,35 @@ class ListingCreationForm extends React.Component {
 
   render() {
     return (
-      <div className='creating-listing'>
-        <div className="login-form">
-          {this.renderErrors()}
+      <div className='create-listing-page'>
+        <div className='creating-listing'>
+          <div className="creation-errors">
+            {this.renderErrors()}
+          </div>
+          <form onSubmit={this.handleSubmit} className='listing-creation-form'>
+            <input type='text'
+              onChange={this.updateField('name')}
+              className='listing-input'
+              placeholder='What would you like to call your place?'
+              value={this.state.name}
+              /><br/>
+            <input type='text'
+              onChange={this.updateField('address')}
+              className='listing-input'
+              placeholder='Where is your place?'
+              value={this.state.address}
+              /><br/>
+            <textarea
+              onChange={this.updateField('description')}
+              className='listing-input-textarea'
+              placeholder='What would you like the next guest to know? Tell us all about it!'
+              value={this.state.description}
+              /><br/>
+            <input className="create-listing-submit" type="submit" value='Create Listing!' />
+          </form>
         </div>
-        <form onSubmit={this.handleSubmit} className='listing-creation-form'>
-          <input type='text'
-            onChange={this.updateField('name')}
-            className='listing-input'
-            value={this.state.name}
-            />
-          <input type='text'
-            onChange={this.updateField('address')}
-            className='listing-input'
-            value={this.state.address}
-            />
-          <textarea
-            onChange={this.updateField('description')}
-            className='listing-input'
-            value={this.state.description}
-            />
-        </form>
+        <div className='create-list-right'>
+        </div>
       </div>
     )
   }
