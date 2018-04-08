@@ -30,26 +30,26 @@ export const receiveErrors = errors => ({
   errors
 })
 
-export const fetchListings = () => (
+export const fetchListings = () => dispatch => (
   APIUtil.fetchListings.then(listings => dispatch(receiveListings(listings)))
 )
 
-export const fetchListing = (id) => (
+export const fetchListing = (id) => dispatch => (
   APIUtil.fetchListing(id).then(listing => dispatch(receiveListing(listing)))
 )
 
-export const createListing = (listing) => (
+export const createListing = (listing) => dispatch => (
   APIUtil.createListing(listing).then(listing => (dispatch(receiveListing(listing)
 )), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 )
 
-export const deleteListing = (listing) => (
+export const deleteListing = (listing) => dispatch => (
   APIUtil.deleteListing(listing.id).then(listing => dispatch(removeListing(listing)))
 )
 
-export const updateListing = (listing) => (
+export const updateListing = (listing) => dispatch => (
   APIUtil.updateListing(listing.id).then(listing => (dispatch(receiveListing(listing)
 )), err => (
     dispatch(receiveErrors(err.responseJSON))

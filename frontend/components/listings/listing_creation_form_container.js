@@ -10,7 +10,7 @@ const mapStateToProps = ({ errors }) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  createListing: listing => dispatch(createListing(listing))
+  makeListing: listing => dispatch(createListing(listing))
 })
 
 export default connect(

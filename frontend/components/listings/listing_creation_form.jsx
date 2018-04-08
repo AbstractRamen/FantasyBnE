@@ -17,7 +17,7 @@ class ListingCreationForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createListing(this.state)
+    this.props.makeListing(this.state)
   }
 
   updateField(field) {
