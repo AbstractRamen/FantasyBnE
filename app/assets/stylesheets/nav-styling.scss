@@ -11,12 +11,19 @@
 }
 
 .logo {
-  background-image: url('logo.png');
+  background-image: image-url('logo.png');
   height: 40px;
   width: 40px;
 }
 
 .nav-buttons {
+  padding: 0px 10px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.nav-buttons-greet {
   padding: 0px 10px;
   display: flex;
   height: 40px;
@@ -50,4 +57,8 @@
 
 .login-form-container {
   z-index: 2;
+}
+
+.become-host {
+  text-decoration: none;
 }

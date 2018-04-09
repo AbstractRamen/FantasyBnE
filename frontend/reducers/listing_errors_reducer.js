@@ -9,8 +9,6 @@ export default (state = [], action) => {
   switch (action.type) {
     case RECEIVE_LISTING_ERRORS:
       return action.errors;
-    case RECEIVE_LISTING:
-      return [];
     case CLEAR_ERRORS:
       return [];
     default:

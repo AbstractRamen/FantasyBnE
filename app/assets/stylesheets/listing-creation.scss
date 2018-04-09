@@ -1,29 +1,49 @@
+.creation-errors {
+  margin: 0px 0px 0px 100px;
+}
+
 .creating-listing {
-  width: 50%;
+  width: 60%;
   display: flex;
   align-items: center;
+}
 
+.form-words {
+  margin: 58px 93.5px 40px 100px;
+  display: flex;
+  font-size: 32px;
+  text-rendering: optimizeLegibility;
 }
 
 .listing-creation-form {
-  margin: 58px 93.5px 100px 100px;
-  background-color: red;
+  margin: 20px 0px 0px 100px;
+  // background-color: red;
   font-size: 16px;
-  border-radius: 2px;
   color: #484848;
-  width: 100%;
+  width: 70%;
 }
 
 .listing-input {
+  border-radius: 2px;
   display: block;
   border: 1px solid #aaa;
   width: 80%;
+  padding: 8px 10px;
+  font-size: 18px;
+}
+
+.listing-input-textarea {
+  width: 90%;
+  font-size: 18px;
+  height: 200px;
+  padding: 8px 10px;
 }
 
 .create-listing-submit {
   background-color: #008489;
   font-size: 15px;
-  padding: 0px 8px;
+  padding: 4px 8px 4px 8px;
+  margin-top: 8px;
   border-radius: 4px;
   border: 1px solid transparent;
   color: white;

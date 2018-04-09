@@ -8,10 +8,10 @@ class ListingCreationForm extends React.Component {
     this.state = {
       name: '',
       description: '',
-      address: ''
+      address: '',
+      user_id: `${this.props.session.currentUser.id}`
     };
 
-    this.updateField = this.updateField.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -20,10 +20,10 @@ class ListingCreationForm extends React.Component {
     this.props.makeListing(this.state)
   }
 
-  updateField(field) {
-    return(e) => (
-      this.setState({[field]: e.target.value})
-    )
+  update(field) {
+    return e => this.setState({
+      [field]: e.target.value
+    });
   }
 
   renderErrors() {
@@ -40,33 +40,39 @@ class ListingCreationForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className='create-listing-page'>
         <div className='creating-listing'>
+          <div className='listing-text'>
+          <div className='form-words'>
+            Hi, {this.props.session.currentUser.name}! Let's get started listing your space.
+          </div>
           <div className="creation-errors">
             {this.renderErrors()}
           </div>
           <form onSubmit={this.handleSubmit} className='listing-creation-form'>
             <input type='text'
-              onChange={this.updateField('name')}
-              className='listing-input'
-              placeholder='What would you like to call your place?'
               value={this.state.name}
+              onChange={this.update('name')}
+              className='listing-input'
+              placeholder='What is your place called?'
               /><br/>
             <input type='text'
-              onChange={this.updateField('address')}
+              value={this.state.address}
+              onChange={this.update('address')}
               className='listing-input'
               placeholder='Where is your place?'
-              value={this.state.address}
               /><br/>
             <textarea
-              onChange={this.updateField('description')}
+              value={this.state.description}
+              onChange={this.update('description')}
               className='listing-input-textarea'
               placeholder='What would you like the next guest to know? Tell us all about it!'
-              value={this.state.description}
               /><br/>
             <input className="create-listing-submit" type="submit" value='Create Listing!' />
           </form>
+          </div>
         </div>
         <div className='create-list-right'>
         </div>

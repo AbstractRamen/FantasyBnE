@@ -9,6 +9,9 @@ const sessionLinks = (login, openModal) => (
       </Link>
 
     <div className='none-user-nav-right'>
+      <div className='nav-buttons' >
+        <Link className='become-host' to='/listing/new'>Become a host</Link>
+      </div>
       <div className='nav-buttons' onClick={() => login(user)}>
         <span className='nav-links'>Try it out!</span>
       </div>
@@ -30,9 +33,20 @@ const personalGreeting = (currentUser, logout) => (
       </Link>
 
     <div className='none-user-nav-right'>
-      <h2 className="header-name">Hi, {currentUser.name}!</h2>
+      <div className='nav-buttons-greet' >
+        <h2 className="header-name">Hi, {currentUser.name}!</h2>
+      </div>
+      <div className='nav-buttons' onClick={() =>
+          { if (this.props.session.currentUser) {
+            null
+          } else {
+            openModal('login')
+          }
+        }}>
+        <Link className='become-host' to='/listing/new'>Become a host</Link>
+      </div>
       <div className='nav-buttons' onClick={logout}>
-        <span>Log Out</span>
+        <Link className='become-host' to='/'>Log Out</Link>
       </div>
     </div>
   </nav>

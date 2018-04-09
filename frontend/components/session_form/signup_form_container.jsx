@@ -5,7 +5,7 @@ import { signup, clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = ( errors ) => {
+const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
     formType: 'Sign Up'
@@ -16,9 +16,9 @@ const mapDispatchToProps = dispatch => {
   return {
     processForm: (user) => dispatch(signup(user)),
     otherForm: (
-      <span className='switch-session' onClick={() => dispatch(openModal('login'))}>
+      <Link to='login' className='switch-session' onClick={() => dispatch(openModal('login'))}>
         Log In
-   </span>
+      </Link>
     ),
     closeModal: () => dispatch(closeModal()),
     clearErrors: () => dispatch(clearErrors())

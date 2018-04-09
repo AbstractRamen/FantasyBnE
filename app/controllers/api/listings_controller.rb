@@ -10,8 +10,12 @@ class Api::ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.create!(listing_params)
-    render :show
+    @listing = Listing.new(listing_params)
+    if @listing.save
+      render :show
+    else
+      render json: @listing.errors.full_messages, status: 422
+    end
   end
 
   private
@@ -21,8 +25,9 @@ class Api::ListingsController < ApplicationController
       :lat,
       :lng,
       :description,
-      :owner_id,
-      :picture_url
+      :name,
+      :user_id,
+      :picture_url,
       :address
     )
   end

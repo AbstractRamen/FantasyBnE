@@ -8,10 +8,20 @@
 
 User.destroy_all!
 
-user1 = user.create(email: 'adventurer@dream.brave', name: 'Brave adventurer', password: 123456)
-user2 = user.create(email: 'wukong@best.mountain', name: 'Sun Wukong', password: 123456)
-user3 = user.create(email: 'admin@hogwartz.edu', name: 'Albus Dumbledore ', password: 123456)
-user4 = user.create(email: 'tim@icloud.com', name: 'Time Cook', password: 123456)
-user5 = user.create(email: 'hiro@sanfransokyo.com', name: 'Hiro Hamada', password: 123456)
-user6 = user.create(email: 'xuangdi@first.emperorer', name: 'Shi Huangdi', password: 123456)
-user7 = user.create(email: 'brycehoward@famous.actress', name: 'Bryce Dallas Howard', password: 123456)
+a = User.create(email: 'adventurer@dream.brave', name: 'Brave adventurer', password: 123456)
+b = User.create(email: 'wukong@best.mountain', name: 'Sun Wukong', password: 123456)
+c = User.create(email: 'admin@hogwartz.edu', name: 'Albus Dumbledore ', password: 123456)
+d = User.create(email: 'tim@icloud.com', name: 'Tim Cook', password: 123456)
+e = User.create(email: 'hiro@sanfransokyo.com', name: 'Hiro Hamada', password: 123456)
+f = User.create(email: 'xuangdi@first.emperorer', name: 'Shi Huangdi', password: 123456)
+g = User.create(email: 'brycehoward@famous.actress', name: 'Bryce Dallas Howard', password: 123456)
+
+Listing.destroy_all!
+
+a1 = Listing.create(user_id: a.id, name: 'Isekai', address: 'Bermuda Triangle', description: 'Another world')
+b1 = Listing.create(user_id: b.id, name: 'Mount Huaguo', address: 'Yuntai, Jiangsu, China', description: 'Just... befriend the monkies')
+c1 = Listing.create(user_id: c.id, name: 'Hogwartz', address: 'Christ Church, St. Aldates, Oxford OX11DP', description: 'No muggles!')
+d1 = Listing.create(user_id: d.id, name: 'Apple HQ', address: '1 Infinite Loop; Cupertino, CA 95014', description: 'Just wait 6 months for the S')
+e1 = Listing.create(user_id: e.id, name: 'San Fransokyo', address: 'Pier 15 The Embarcadero, San Francisco, CA 94111', description: 'Learn, play, discover!')
+f1 = Listing.create(user_id: f.id, name: 'Mausoleum of the First Qin Emperor', address: 'Lintong District, Xi\'an, Shaanxi, China', description: 'Careful of the mercury')
+g1 = Listing.create(user_id: g.id, name: 'Jurassic World', address: 'Kualoa Ranch, Oahu Hawaii', description: '...don\'t let them hear you')
