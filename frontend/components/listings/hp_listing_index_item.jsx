@@ -7,7 +7,8 @@ const ListingIndexItem = ( listing ) => {
   <li className="listing-index-item">
       <Link to={`/listings/${listing.listing.id}`}
         className='item-pic-box'>
-        <span className='item-pic'></span>
+        <img className='spotlight-pic'
+          src={listing.listing.image_url} />
       </Link>
       <Link to={`/listings/${listing.listing.id}`}
         className='item-name'>

@@ -40,16 +40,18 @@
 .item-pic-box {
   width: 100%;
   height: 200px;
-  border: 1px solid black;
-  border-radius: 3px;
+  // border: 1px solid black;
 }
 
-.item-pic {
-  background-image: image-url('favicon.png');
+.spotlight-pic {
+  min-width: 100%;
+  max-height: 100%;
+  border-radius: 3px;
 }
 
 .item-name {
   padding-top: 8px;
   font-size: 19px;
   line-height: 22px;
+  text-decoration: none;
 }
