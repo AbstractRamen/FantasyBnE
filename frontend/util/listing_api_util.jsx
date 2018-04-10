@@ -12,11 +12,18 @@ export const fetchListing = (id) => (
   })
 )
 
-export const createListing = (listing) => (
+export const createListing = (formData , callback) => (
   $.ajax({
     type: 'post',
     url: `/api/listings/`,
-    data: { listing }
+    contentType: false,
+    processData: false,
+    dataType: 'json',
+    data: formData,
+      success: function(){
+
+        callback()
+      }
   })
 )
 

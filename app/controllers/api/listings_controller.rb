@@ -30,7 +30,8 @@ class Api::ListingsController < ApplicationController
       :name,
       :user_id,
       :picture_url,
-      :address
+      :address,
+      :image
     )
   end
 

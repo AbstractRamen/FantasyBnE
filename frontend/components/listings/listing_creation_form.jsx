@@ -21,7 +21,13 @@ class ListingCreationForm extends React.Component {
 
   handleSubmit() {
     if (this.props.currentUser.id) {
-      this.props.makeListing(this.state)
+      let formData = new FormData();
+      formData.append("listing[name]", this.state.name);
+      formData.append("listing[description]", this.state.description);
+      formData.append("listing[address]", this.state.address);
+      formData.append("listing[user_id]", this.state.user_id);
+      formData.append("listing[image]", this.state.imageFile);
+      this.props.makeListing(formData)
     } else {
       this.props.openModal();
     }
