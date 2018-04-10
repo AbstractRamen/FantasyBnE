@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all!
+User.destroy_all
 
 a = User.create(email: 'adventurer@dream.brave', name: 'Brave adventurer', password: 123456)
 b = User.create(email: 'wukong@best.mountain', name: 'Sun Wukong', password: 123456)
@@ -16,7 +16,7 @@ e = User.create(email: 'hiro@sanfransokyo.com', name: 'Hiro Hamada', password: 1
 f = User.create(email: 'xuangdi@first.emperorer', name: 'Shi Huangdi', password: 123456)
 g = User.create(email: 'brycehoward@famous.actress', name: 'Bryce Dallas Howard', password: 123456)
 
-Listing.destroy_all!
+Listing.destroy_all
 
 a1 = Listing.create(user_id: a.id, name: 'Isekai', address: 'Bermuda Triangle', description: 'Another world')
 b1 = Listing.create(user_id: b.id, name: 'Mount Huaguo', address: 'Yuntai, Jiangsu, China', description: 'Just... befriend the monkies')

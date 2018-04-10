@@ -75,10 +75,8 @@ class SessionForm extends React.Component {
                   className='login-input'
                   />
               </div>
-            ) : (null
-                )}
-
-
+                ) : (null
+              )}
 
               <div className="login-form">
                 <br/>

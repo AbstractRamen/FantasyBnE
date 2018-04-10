@@ -8,6 +8,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import ListingCreationFormContainer from './listings/listing_creation_form_container';
 import Modal from './modal/modal';
+import ListingIndexContainer from './listings/hp_listing_index_container';
 
 const App = () => (
   <div>
@@ -15,6 +16,7 @@ const App = () => (
     <header>
       <NavContainer />
     </header>
+    <Route exact path='/' component={ListingIndexContainer} />
     <Switch>
       <ProtectedRoute exact path="/listing/new" component={ListingCreationFormContainer} />
    </Switch>

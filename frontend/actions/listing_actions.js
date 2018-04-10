@@ -31,7 +31,7 @@ export const receiveErrors = errors => ({
 })
 
 export const fetchListings = () => dispatch => (
-  APIUtil.fetchListings.then(listings => dispatch(receiveListings(listings)))
+  APIUtil.fetchListings().then(listings => dispatch(receiveListings(listings)))
 )
 
 export const fetchListing = (id) => dispatch => (

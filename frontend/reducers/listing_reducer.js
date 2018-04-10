@@ -9,7 +9,7 @@ const listingsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_LISTINGS:
-      return merge({}, state, action.listings)
+      return action.listings
     case RECEIVE_LISTING:
       return merge({}, state, { [action.listing.id]: action.listing })
     case DELETE_LISTING:
