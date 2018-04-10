@@ -9,9 +9,6 @@ const sessionLinks = (login, openModal) => (
       </Link>
 
     <div className='none-user-nav-right'>
-      <div className='nav-buttons' >
-        <Link className='become-host' to='/listing/new'>Become a host</Link>
-      </div>
       <div className='nav-buttons' onClick={() => login(user)}>
         <span className='nav-links'>Try it out!</span>
       </div>

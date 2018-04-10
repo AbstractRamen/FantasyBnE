@@ -5,6 +5,10 @@ import ListingIndexItem from './hp_listing_index_item';
 
 class ListingIndex extends React.Component {
 
+  constructor(props) {
+    super(props)
+  }
+
   componentDidMount() {
     this.props.fetchListings();
   }
@@ -12,13 +16,27 @@ class ListingIndex extends React.Component {
   render() {
 
     const listings = this.props.listings;
-    debugger
 
     return (
       <section className="listings">
-        <ul>
-          {listings.map(listing => <ListingIndexItem key={listing.id} listings={listing} />)}
-        </ul>
+        <span className='listing-intro'>
+          Spotlights from around the world!
+        </span>
+        <div className='listing-index-container'>
+          <ul className='ul-wrapper'>
+            {listings.map((listing, i) => {
+                if (i <= 5) {
+                  return (
+                    <ListingIndexItem
+                      key={listing.user_id}
+                      listing={listing}
+                    />
+                  )
+                }
+              })
+            }
+          </ul>
+        </div>
       </section>
     );
   }
