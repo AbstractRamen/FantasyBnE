@@ -9,9 +9,13 @@ class ListingCreationForm extends React.Component {
       name: '',
       description: '',
       address: '',
-      user_id: `${this.props.currentUser.id}`
+      user_id: `${this.props.currentUser.id}`,
+      imageUrl: null,
+      imageFile: null
+
     };
 
+    this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -27,6 +31,22 @@ class ListingCreationForm extends React.Component {
     return e => this.setState({
       [field]: e.target.value
     });
+  }
+
+  updateFile(e) {
+    let that = this
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      that.setState({
+        imageFile: file,
+        imageUrl: fileReader.result
+      });
+    }
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   renderErrors() {
@@ -67,20 +87,29 @@ class ListingCreationForm extends React.Component {
               className='listing-input'
               placeholder='Where is your place?'
               /><br/>
+            <input
+              className='listing-input'
+              onChange={this.updateFile}
+              type='file'
+              /><br />
             <textarea
               value={this.state.description}
               onChange={this.update('description')}
               className='listing-input-textarea'
               placeholder='What would you like the next guest to know? Tell us all about it!'
-              /><br/>
+              />
+            <br/>
             <div
               className="create-listing-submit"
-              onClick={this.handleSubmit}
-              >Create Listing!</div>
+              onClick={this.handleSubmit}>
+              Create Listing!
+            </div>
           </form>
           </div>
         </div>
         <div className='create-list-right'>
+          <img className='preview-upload'
+            src={this.state.imageUrl}/>
         </div>
       </div>
     )

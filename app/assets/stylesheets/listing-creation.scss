@@ -1,3 +1,7 @@
+.create-listing-page {
+  display: flex;
+}
+
 .creation-errors {
   margin: 0px 0px 0px 100px;
 }
@@ -21,6 +25,16 @@
   font-size: 16px;
   color: #484848;
   width: 70%;
+}
+
+.create-list-right {
+  background-color: black;
+  width: 40%;
+}
+
+.preview-upload {
+  width: 100%;
+  height: 100%;
 }
 
 .listing-input {
