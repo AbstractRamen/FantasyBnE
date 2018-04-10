@@ -37,7 +37,7 @@ const personalGreeting = (currentUser, logout) => (
         <h2 className="header-name">Hi, {currentUser.name}!</h2>
       </div>
       <div className='nav-buttons' onClick={() =>
-          { if (this.props.session.currentUser) {
+          { if (currentUser) {
             null
           } else {
             openModal('login')
@@ -45,9 +45,10 @@ const personalGreeting = (currentUser, logout) => (
         }}>
         <Link className='become-host' to='/listing/new'>Become a host</Link>
       </div>
-      <img src={this.props.session.currentUser.image_url} />
       <div className='nav-buttons' onClick={logout}>
         <Link className='become-host' to='/'>Log Out</Link>
+        <img className='avatar'
+          src={currentUser.image_url} />
       </div>
     </div>
   </nav>
