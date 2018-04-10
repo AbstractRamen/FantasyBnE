@@ -9,7 +9,6 @@ class ListingCreationForm extends React.Component {
       name: '',
       description: '',
       address: '',
-      user_id: `${this.props.currentUser.id}`,
       imageUrl: null,
       imageFile: null
 
@@ -25,7 +24,7 @@ class ListingCreationForm extends React.Component {
       formData.append("listing[name]", this.state.name);
       formData.append("listing[description]", this.state.description);
       formData.append("listing[address]", this.state.address);
-      formData.append("listing[user_id]", this.state.user_id);
+      formData.append("listing[user_id]", this.props.currentUser.id);
       formData.append("listing[image]", this.state.imageFile);
       this.props.makeListing(formData)
     } else {

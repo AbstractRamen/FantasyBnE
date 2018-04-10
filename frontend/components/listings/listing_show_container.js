@@ -1,18 +1,20 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-import ShowListing from './listing_show';
+import ListingShow from './listing_show';
 import { fetchListing } from '../../actions/listing_actions';
-import selectAllListings from '../../reducers/selectors';
+import selectListing from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
-  listing: state.entities.listings[ownProps.match.params.id]
+  listings: state.entities.listings[ownProps.match.params.id],
+  ownProps: ownProps
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchListing: (id) => dispatch(fetchListing(id))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ShowListing);
+)(ListingShow));

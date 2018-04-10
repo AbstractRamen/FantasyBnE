@@ -1,11 +1,15 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 
-class ShowListing extends React.Component {
+class ListingShow extends React.Component {
   constructor(props){
     super(props)
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.fetchListing(this.props.ownProps.match.params.id)
   }
 
   handleSubmit(e) {
@@ -14,14 +18,14 @@ class ShowListing extends React.Component {
   }
 
   render() {
-
+    console.log(this.props);
     return (
       <div className='create-listing-page'>
-        Yo
+
       </div>
     )
   }
 
 }
 
-export default withRouter(ShowListing);
+export default ListingShow;

@@ -1,5 +1,5 @@
 import values from 'lodash/values';
 
-const selectAllListings = state => values(state.entities.listings);
+export const selectAllListings = state => values(state.entities.listings);
 
-export default selectAllListings
+export const selectListing = (state, id) => values(state.entities.listings[id])
