@@ -7,7 +7,7 @@ const ListingIndexItem = ( listing ) => {
   <li className="listing-index-item">
       <Link to={`/listings/${listing.listing.id}`}
         className='item-pic-box'>
-        <span class-name='item-pic'></span>
+        <span className='item-pic'></span>
       </Link>
       <Link to={`/listings/${listing.listing.id}`}
         className='item-name'>

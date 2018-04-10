@@ -3,17 +3,18 @@ import React from 'react';
 
 import ListingCreationForm from './listing_creation_form';
 import { createListing } from '../../actions/listing_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ( state, ownProps ) => {
   return {
-    entities: state.entities,
     errors: state.errors.listing,
-    session: state.session
+    currentUser: state.session.currentUser || {}
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  makeListing: listing => dispatch(createListing(listing))
+  makeListing: listing => dispatch(createListing(listing)),
+  openModal: () => dispatch(openModal('login'))
 })
 
 export default connect(

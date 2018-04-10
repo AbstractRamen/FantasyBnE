@@ -10,6 +10,7 @@ import ListingCreationFormContainer from './listings/listing_creation_form_conta
 import Modal from './modal/modal';
 import ListingIndexContainer from './listings/hp_listing_index_container';
 
+
 const App = () => (
   <div>
     <Modal />
@@ -17,8 +18,9 @@ const App = () => (
       <NavContainer />
     </header>
     <Route exact path='/' component={ListingIndexContainer} />
+    <Route exact path="/listing/new" component={ListingCreationFormContainer} />
+
     <Switch>
-      <ProtectedRoute exact path="/listing/new" component={ListingCreationFormContainer} />
    </Switch>
   </div>
 )

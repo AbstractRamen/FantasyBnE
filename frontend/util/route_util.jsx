@@ -26,7 +26,18 @@ const Protected = ({ component: Component, path, loggedIn, exact, openModal, log
     )} />
   );
 
+const Button = ({component: Component, loggedIn, openModal }) => {
+  if (loggedIn) {
+    return <Component {...props} />
+  } else {
+    openModal();
+    return null
+  }
+}
 
+const mapDispatchToProps = (dispatch) => ({
+  openModal: () => dispatch(openModal('login'))
+})
 
 const mapStateToProps = state => (
   {loggedIn: Boolean(state.session.currentUser)}
@@ -35,3 +46,8 @@ const mapStateToProps = state => (
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+
+export const ProtectedButton = withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Button))

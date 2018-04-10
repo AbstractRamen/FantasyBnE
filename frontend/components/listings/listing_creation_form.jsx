@@ -9,15 +9,18 @@ class ListingCreationForm extends React.Component {
       name: '',
       description: '',
       address: '',
-      user_id: `${this.props.session.currentUser.id}`
+      user_id: `${this.props.currentUser.id}`
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.makeListing(this.state)
+  handleSubmit() {
+    if (this.props.currentUser.id) {
+      this.props.makeListing(this.state)
+    } else {
+      this.props.openModal();
+    }
   }
 
   update(field) {
@@ -46,12 +49,12 @@ class ListingCreationForm extends React.Component {
         <div className='creating-listing'>
           <div className='listing-text'>
           <div className='form-words'>
-            Hi, {this.props.session.currentUser.name}! Let's get started listing your space.
+            Hi, {this.props.currentUser.name || 'traveler'}! Let's get started listing your space.
           </div>
           <div className="creation-errors">
             {this.renderErrors()}
           </div>
-          <form onSubmit={this.handleSubmit} className='listing-creation-form'>
+          <form className='listing-creation-form'>
             <input type='text'
               value={this.state.name}
               onChange={this.update('name')}
@@ -70,7 +73,10 @@ class ListingCreationForm extends React.Component {
               className='listing-input-textarea'
               placeholder='What would you like the next guest to know? Tell us all about it!'
               /><br/>
-            <input className="create-listing-submit" type="submit" value='Create Listing!' />
+            <div
+              className="create-listing-submit"
+              onClick={this.handleSubmit}
+              >Create Listing!</div>
           </form>
           </div>
         </div>
