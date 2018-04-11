@@ -13,7 +13,7 @@
 }
 
 .show-pic {
-  object-fit: contain;
+  object-fit: cover;
   min-width: 100%;
   min-height: 100%;
 }
@@ -26,12 +26,13 @@
 .below-show-pic {
   padding-left: 24px;
   padding-right: 24px;
-  min-width: 80%;
-  margin: 15px 15px 0px 15px;
+  min-width: 70%;
+  height: 400px;
+  margin: 25px 35px 0px 35px;
   display: flex;
   align-self: center;
-flex-direction: column;
-  background-color: red;
+  flex-direction: column;
+
 }
 
 .show-name {
@@ -43,6 +44,7 @@ flex-direction: column;
 
 .top-desc {
   display: flex;
+  margin-bottom: 30px;
 }
 
 .bottom-desc {

@@ -18,10 +18,9 @@ const App = () => (
       <NavContainer />
     </header>
     <Route exact path='/' component={ListingIndexContainer} />
-    <Route path={`/listing/:id`} component={ListingShowContainer} />
-    <Route exact path="/listing/new" component={ListingCreationFormContainer} />
-
     <Switch>
+      <Route exact path="/listing/new" component={ListingCreationFormContainer} />
+      <Route path={`/listing/:id`} component={ListingShowContainer} />
    </Switch>
   </div>
 )
