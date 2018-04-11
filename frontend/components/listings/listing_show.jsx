@@ -5,23 +5,21 @@ class ListingShow extends React.Component {
   constructor(props){
     super(props)
 
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
-    this.props.fetchListing(this.props.ownProps.match.params.id)
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.makeListing(this.state)
+    this.props.fetchListing((this.props.params.id))
   }
 
   render() {
-    console.log(this.props);
+
+    const listing = this.props.listing;
+
     return (
       <div className='create-listing-page'>
-
+        Why
+        {listing.name}
+        <img src={listing.image_url} />
       </div>
     )
   }

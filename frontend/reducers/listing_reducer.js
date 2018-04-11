@@ -11,7 +11,7 @@ const listingsReducer = (state = {}, action) => {
     case RECEIVE_LISTINGS:
       return action.listings
     case RECEIVE_LISTING:
-      return merge({}, state, { [action.listing.id]: action.listing })
+      return action.listing
     case DELETE_LISTING:
         delete newState[action.listing.id]
         return newState
