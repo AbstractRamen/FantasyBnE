@@ -1,0 +1,61 @@
+.show-listing-page {
+  display: block;
+  min-width: 100%;
+  height: 800px;
+  overflow: hidden;
+}
+
+.show-splash-pic {
+  // display: block;
+  min-width: 100%;
+  max-height: 50%;
+  overflow: hidden;
+}
+
+.show-pic {
+  object-fit: contain;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.show-splash-desc {
+  display: block;
+
+}
+
+.below-show-pic {
+  padding-left: 24px;
+  padding-right: 24px;
+  min-width: 80%;
+  margin: 15px 15px 0px 15px;
+  display: flex;
+  align-self: center;
+flex-direction: column;
+  background-color: red;
+}
+
+.show-name {
+  font-size: 24px;
+  font-weight: 300;
+  color: inherit;
+  line-height: 22px;
+}
+
+.top-desc {
+  display: flex;
+}
+
+.bottom-desc {
+  display: flex;
+}
+
+.desc-blurb {
+  overflow-wrap: break-word;
+  color: #484848;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+}
+
+.bottom-desc {
+
+}

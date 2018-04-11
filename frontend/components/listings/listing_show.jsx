@@ -16,10 +16,26 @@ class ListingShow extends React.Component {
     const listing = this.props.listing;
 
     return (
-      <div className='create-listing-page'>
-        Why
-        {listing.name}
-        <img src={listing.image_url} />
+      <div className='show-listing-page'>
+        <div className='show-splash-pic'>
+          <img className='show-pic'
+            src={listing.image_url} />
+        </div>
+        <div className='below-show-pic'>
+
+          <div className='top-desc'>
+            <h1 className='show-name'>
+              {listing.name}
+            </h1>
+          </div><br />
+
+          <section className='bottom-desc'>
+            <div className='desc-blurb'>
+              {listing.description}
+            </div>
+          </section>
+
+        </div>
       </div>
     )
   }
