@@ -1,9 +1,9 @@
 class Api::ListingsController < ApplicationController
-  before_action :require_logged_in, only: [:create]
+  before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    @listings = Listing.all
-    render :index, includes: :reviews
+    @reviews = Review.all
+    render :index
   end
 
   def show
@@ -32,7 +32,7 @@ class Api::ListingsController < ApplicationController
       :picture_url,
       :address,
       :image,
-      :review
+      :reviews
     )
   end
 

@@ -27,3 +27,13 @@ d1 = Listing.create(user_id: d.id, name: 'Apple HQ', address: '1 Infinite Loop; 
 e1 = Listing.create(user_id: e.id, name: 'San Fransokyo', address: 'Pier 15 The Embarcadero, San Francisco, CA 94111', description: Faker::Lorem.paragraph(4))
 f1 = Listing.create(user_id: f.id, name: 'Mausoleum of the First Qin Emperor', address: 'Lintong District, Xi\'an, Shaanxi, China', description: Faker::Lorem.paragraph(4))
 g1 = Listing.create(user_id: g.id, name: 'Jurassic World', address: 'Kualoa Ranch, Oahu Hawaii', description: Faker::Lorem.paragraph(4))
+
+Review.destroy_all
+
+aa = Review.create(author_id: b.id, listing_id: d1.id, body: Faker::Lorem.paragraph)
+ab = Review.create(author_id: b.id, listing_id: d1.id, body: Faker::Lorem.paragraph)
+ac = Review.create(author_id: c.id, listing_id: d1.id, body: Faker::Lorem.paragraph)
+ad = Review.create(author_id: d.id, listing_id: a1.id, body: Faker::Lorem.paragraph)
+ae = Review.create(author_id: d.id, listing_id: a1.id, body: Faker::Lorem.paragraph)
+af = Review.create(author_id: a.id, listing_id: d1.id, body: Faker::Lorem.paragraph)
+ag = Review.create(author_id: d.id, listing_id: a1.id, body: Faker::Lorem.paragraph)
