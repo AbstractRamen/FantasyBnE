@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewIndexItem from './../reviews/review_index_item';
 import { withRouter, Route } from 'react-router-dom';
+import ReviewIndexContainer from './../reviews/review_index_container';
 import ReviewCreationContainer from './../reviews/review_create_container';
 
 class ListingShow extends React.Component {
@@ -22,12 +23,15 @@ class ListingShow extends React.Component {
 
     const listing = this.props.listing;
     console.log(this.props);
+    const background = {
+      backgroundImage: 'url(' + listing.image_url + ')',
+    };
 
     return (
       <div className='show-listing-page'>
-        <div className='show-splash-pic'>
-          <img className='show-pic'
-            src={listing.image_url} />
+        <div className='show-splash-pic' style={background}>
+          {/*<img className='show-pic'
+            src={listing.image_url} />*/}
         </div>
 
 
@@ -48,6 +52,7 @@ class ListingShow extends React.Component {
 
 
           <ReviewCreationContainer />
+          <ReviewIndexContainer />
 
         </div>
       </div>

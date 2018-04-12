@@ -28,6 +28,7 @@ class Api::ReviewsController < ApplicationController
       :user_id,
       :reviews,
       :listing_id,
+      :author_id
     )
   end
 

@@ -11,6 +11,8 @@ export default (state = [], action) => {
       return action.errors;
     case CLEAR_ERRORS:
       return [];
+    case RECEIVE_REVIEW:
+      return [];
     default:
       return state;
   }

@@ -40,9 +40,15 @@ export const fetchListing = (id) => dispatch => (
 
 export const createListing = (listing) => dispatch => (
   APIUtil.createListing(listing).then(
-    listing => (dispatch(receiveListing(listing))),
-    err => (dispatch(receiveErrors(err.responseJSON))
-  ))
+    listing => {
+      dispatch(receiveListing(listing));
+      return true;
+    },
+    err => {
+      dispatch(receiveErrors(err.responseJSON));
+      return false;
+    }
+  )
 )
 
 export const deleteListing = (listing) => dispatch => (

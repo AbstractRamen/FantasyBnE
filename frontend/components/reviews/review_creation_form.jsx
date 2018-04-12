@@ -9,7 +9,7 @@ class ReviewCreationForm extends React.Component {
       body: '',
       author_id: this.props.currentUser.id
       };
-
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -18,7 +18,7 @@ class ReviewCreationForm extends React.Component {
     });
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
     e.preventDefault();
     const review = Object.assign({}, this.state);
     this.props.createReview(review)
@@ -41,13 +41,16 @@ class ReviewCreationForm extends React.Component {
   }
 
   render() {
-    console.warn(this.props);
+    
 
     return (
       <div className='review-creation-container'>
         <p className='review-intro'>
           We're glad you enjoyed your stay! What would you like to tell others about it?
         </p>
+        <div className="review-errors">
+          {this.renderErrors()}
+        </div>
         <form className='review-create-form'
           onSubmit={this.handleSubmit}>
           <textarea

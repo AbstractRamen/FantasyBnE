@@ -12,6 +12,9 @@ const ListingIndexItem = ( listing ) => {
       </Link>
       <Link to={`/listing/${listing.listing.id}`}
         className='item-name'>
+        <div className='spotlight-address'>
+          {listing.listing.address}
+        </div>
         {listing.listing.name}
     </Link>
   </li>

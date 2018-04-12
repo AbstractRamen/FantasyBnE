@@ -9,24 +9,37 @@ class ReviewIndex extends React.Component {
   constructor(props) {
     super(props)
 
-
+    this.state = this.props.reviews
   }
 
   componentDidMount() {
-    this.props.fetchReviews(this.props.listingId.ownProps)
+    this.props.fetchReviews(this.props.listingId.ownProps).then(() =>
+    this.setState(this.props.reviews))
+  }
+
+  componentWillReceiveProps(nextProps){
+    debugger
+    if(nextProps.values!==this.props.values)
+      {this.props.fetchReviews(this.props.listingId.ownProps).then(() =>
+      this.setState(this.props.reviews))}
   }
 
   render() {
-
-    let reviews = this.props.reviews
-    console.log(this.props);
-    console.warn(this.props);
+    const reviews = this.props.reviews;
+    console.warn(this.props.value);
 
     return (
       <section className="reviews">
-
-
-
+        <div className='reviews-counter'>
+          There are {reviews.length} reviews for this location!
+        </div>< br/>
+        { reviews.map(review => (
+            <ReviewIndexItem
+              key={review.id}
+              review={review}
+              />
+          ))
+        }
       </section>
     );
   }

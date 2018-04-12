@@ -29,9 +29,13 @@ class ListingCreationForm extends React.Component {
 
       if (this.state.imageFile) {
         formData.append("listing[image]", imgFile);
-        this.props.makeListing(formData)
+        this.props.makeListing(formData).then((result)=> {
+          if (result) this.props.history.push('/')
+        })
       } else {
-        this.props.makeListing(formData)
+        this.props.makeListing(formData).then((result)=> {
+          if (result) this.props.history.push('/')
+        })
       }
     } else {
       this.props.openModal();
