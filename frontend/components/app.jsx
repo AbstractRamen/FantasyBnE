@@ -23,7 +23,6 @@ const App = () => (
     <Switch>
       <Route path={`/listing/:id`} component={ListingShowContainer} />
    </Switch>
-   <ProtectedRoute path={`/listing/:id`} component={ReviewCreationContainer} />
   </div>
 )
 
