@@ -20,10 +20,6 @@ export const createListing = (formData , callback) => (
     processData: false,
     dataType: 'json',
     data: formData,
-      success: function(){
-
-        callback()
-      }
   })
 )
 

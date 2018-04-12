@@ -1,38 +1,27 @@
-class Api::ListingsController < ApplicationController
+class Api::ReviewsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    @reviews = Review.all
+    @reviews = Listing.find(params[:id]).reviews
     render :index
   end
 
-  def show
-    @listing = Listing.find(params[:id])
-    render :show
-  end
-
   def create
-    @listing = Listing.new(listing_params)
-    if @listing.save
+    @review = Review.new(review_params)
+    if @review.save
       render :show
     else
-      render json: @listing.errors.full_messages, status: 422
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
   private
 
-  def listing_params
-    params.require(:listing).permit(
-      :lat,
-      :lng,
-      :description,
-      :name,
+  def review_params
+    params.require(:review).permit(
+      :body,
       :user_id,
-      :picture_url,
-      :address,
-      :image,
-      :reviews
+      :reviews,
     )
   end
 

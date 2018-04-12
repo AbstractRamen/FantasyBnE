@@ -1,26 +1,32 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import values from 'lodash/values';
 
-import ReviewIndexItem from './hp_review_index_item';
+import ReviewIndexItem from './review_index_item';
 
 class ReviewIndex extends React.Component {
 
   constructor(props) {
     super(props)
+
+
   }
 
   componentDidMount() {
-    this.props.fetchListings();
-
+    this.props.fetchReviews(this.props.listingId.ownProps)
   }
 
   render() {
 
-    const reviews = this.props.listings;
+    let reviews = this.props.reviews
+    console.log(this.props);
+    console.warn(this.props);
 
     return (
-      <section className="listings">
-        <p>Hi</p>
+      <section className="reviews">
+
+
+
       </section>
     );
   }

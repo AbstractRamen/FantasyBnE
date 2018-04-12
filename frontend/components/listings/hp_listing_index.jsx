@@ -11,7 +11,6 @@ class ListingIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchListings();
-
   }
 
   render() {
@@ -26,7 +25,7 @@ class ListingIndex extends React.Component {
         <div className='listing-index-container'>
           <ul className='ul-wrapper'>
             {listings.map((listing, i) => {
-                if (i <= 5) {
+                if (i <= 10) {
                   return (
                     <ListingIndexItem
                       key={listing.user_id}

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewIndexContainer from './../reviews/review_index_container';
 import { withRouter, Route } from 'react-router-dom';
 
 class ListingShow extends React.Component {
@@ -38,7 +39,12 @@ class ListingShow extends React.Component {
             </div>
           </section>
 
+          <ReviewIndexContainer
+            ownProps={this.props.params.id}
+            reviews={listing}/>
         </div>
+
+
       </div>
     )
   }

@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 
-import ReviewIndex from './hp_listing_index';
-import { selectAllListings } from '../../reducers/selectors';
+import ReviewIndex from './review_index';
+import { fetchReviews, deleteReview, createReview } from '../../actions/review_actions.js'
 
-const mapStateToProps = state => ({
-  reviews: state.entities.reviews
+const mapStateToProps = (state, ownProps) => ({
+  reviews: state.entities.listings.reviews,
+  listingId: ownProps
 });
 
 const mapDispatchToProps = dispatch => ({
   createReview: review => dispatch(createReview(review)),
-  deleteReview: review => dispatch(deleteReview(review))
+  deleteReview: review => dispatch(deleteReview(review)),
+  fetchReviews: (id) => dispatch(fetchReviews(id))
 });
 
 export default connect(
