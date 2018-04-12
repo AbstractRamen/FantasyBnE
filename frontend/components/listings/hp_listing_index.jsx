@@ -29,7 +29,7 @@ class ListingIndex extends React.Component {
                 if (i <= 10) {
                   return (
                     <ListingIndexItem
-                      key={listing.user_id}
+                      key={listing.id}
                       listing={listing}
                     />
                   )
