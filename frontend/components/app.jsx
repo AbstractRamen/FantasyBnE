@@ -10,6 +10,7 @@ import ListingCreationFormContainer from './listings/listing_creation_form_conta
 import Modal from './modal/modal';
 import ListingIndexContainer from './listings/hp_listing_index_container';
 import ListingShowContainer from './listings/listing_show_container';
+import ReviewCreationContainer from './reviews/review_create_container.js'
 
 const App = () => (
   <div>
@@ -18,10 +19,11 @@ const App = () => (
       <NavContainer />
     </header>
     <Route exact path='/' component={ListingIndexContainer} />
+    <Route exact path="/listings/new" component={ListingCreationFormContainer} />
     <Switch>
-      <Route exact path="/listing/new" component={ListingCreationFormContainer} />
       <Route path={`/listing/:id`} component={ListingShowContainer} />
    </Switch>
+   <ProtectedRoute path={`/listing/:id`} component={ReviewCreationContainer} />
   </div>
 )
 

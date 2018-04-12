@@ -16,6 +16,7 @@ class ListingIndex extends React.Component {
   render() {
 
     const listings = this.props.listings;
+    console.log(listings);
 
     return (
       <section className="listings">

@@ -1,6 +1,7 @@
 import React from 'react';
-import ReviewIndexContainer from './../reviews/review_index_container';
+import ReviewIndexItem from './../reviews/review_index_item';
 import { withRouter, Route } from 'react-router-dom';
+import ReviewCreationForm from './../reviews/review_creation_form';
 
 class ListingShow extends React.Component {
   constructor(props){
@@ -8,13 +9,19 @@ class ListingShow extends React.Component {
 
   }
 
+
   componentDidMount(){
-    this.props.fetchListing((this.props.params.id))
+    this.props.fetchListing(this.props.params.id).then(() =>
+    {this.props.fetchReviews(this.props.params.id)}
+    )
+
+    this.reviews = this.props.listing.reviews || []
   }
 
   render() {
 
     const listing = this.props.listing;
+    console.log(this.reviews);
 
     return (
       <div className='show-listing-page'>
@@ -39,12 +46,10 @@ class ListingShow extends React.Component {
             </div>
           </section>
 
-          <ReviewIndexContainer
-            ownProps={this.props.params.id}
-            reviews={listing}/>
+
+          <ReviewCreationForm/>
+
         </div>
-
-
       </div>
     )
   }
@@ -52,3 +57,19 @@ class ListingShow extends React.Component {
 }
 
 export default ListingShow;
+
+
+// {
+//   this.reviews.map((review, i) => {
+//       if (i <= 10) {
+//         return (
+//           <ReviewIndexItem
+//             key={review.id}
+//             review={review}
+//           />
+//         )
+//       }
+//     })
+//
+//
+// }

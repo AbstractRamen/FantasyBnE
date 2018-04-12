@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 
 import ReviewIndex from './review_index';
 import { fetchReviews, deleteReview, createReview } from '../../actions/review_actions.js'
+import { selectAllReviews } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
-  reviews: state.entities.listings.reviews,
+  reviews: selectAllReviews(state),
   listingId: ownProps
 });
 

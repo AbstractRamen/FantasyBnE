@@ -10,7 +10,7 @@ const sessionLinks = (login, openModal) => (
 
     <div className='none-user-nav-right'>
       <div className='nav-buttons' >
-        <Link className='become-host' to='/listing/new'>Become a host</Link>
+        <Link className='become-host' to='/listings/new'>Become a host</Link>
       </div>
       <div className='nav-buttons' onClick={() => login(user)}>
         <span className='nav-links'>Try it out!</span>
@@ -36,17 +36,13 @@ const personalGreeting = (currentUser, logout) => (
       <div className='nav-buttons-greet' >
         <h2 className="header-name">Hi, {currentUser.name}!</h2>
       </div>
-      <div className='nav-buttons' onClick={() =>
-          { if (currentUser) {
-            null
-          } else {
-            openModal('login')
-          }
-        }}>
-        <Link className='become-host' to='/listing/new'>Become a host</Link>
+      <div className='nav-buttons'>
+        <Link className='become-host' to='/listings/new'>Become a host</Link>
       </div>
       <div className='nav-buttons' onClick={logout}>
         <Link className='become-host' to='/'>Log Out</Link>
+      </div>
+      <div className='nav-buttons-avatar'>
         <img className='avatar'
           src={currentUser.image_url} />
       </div>

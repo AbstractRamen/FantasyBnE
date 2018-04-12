@@ -39,9 +39,9 @@ export const fetchListing = (id) => dispatch => (
 )
 
 export const createListing = (listing) => dispatch => (
-  APIUtil.createListing(listing).then(listing => (dispatch(receiveListing(listing)
-)), err => (
-    dispatch(receiveErrors(err.responseJSON))
+  APIUtil.createListing(listing).then(
+    listing => (dispatch(receiveListing(listing))),
+    err => (dispatch(receiveErrors(err.responseJSON))
   ))
 )
 

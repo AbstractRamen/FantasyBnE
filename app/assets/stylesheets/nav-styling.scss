@@ -2,7 +2,6 @@
   width: 35px;
   height: 30px;
   border-radius: 50%;
-  margin-left: 12px;
   border: 1px solid #DBDBDB;
 }
 
@@ -25,6 +24,13 @@
 }
 
 .nav-buttons {
+  padding: 0px 10px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.nav-buttons-avatar {
   padding: 0px 10px;
   display: flex;
   height: 40px;

@@ -3,7 +3,7 @@ class Api::ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    render :index, includes: :reviews
+    render :index
   end
 
   def show
