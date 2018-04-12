@@ -1,0 +1,36 @@
+.review-creation-container {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.review-intro {
+  font-size: 18px;
+}
+
+.review-body {
+  margin: 20px 0px 0px 0px;
+  min-width: 80%;
+  min-height: 100px;
+}
+
+.review-create-form {
+  height: auto;
+}
+
+.review-submit {
+  background: #FF5A5F;
+  text-align: center;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-weight: 700;
+  // height: 20px;
+  margin: 10px 0px;
+  width: 30%;
+  line-height: 22px;
+  font-size: 16px;
+  padding: 11px;
+}

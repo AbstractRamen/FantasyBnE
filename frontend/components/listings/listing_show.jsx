@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewIndexItem from './../reviews/review_index_item';
 import { withRouter, Route } from 'react-router-dom';
-import ReviewCreationForm from './../reviews/review_creation_form';
+import ReviewCreationContainer from './../reviews/review_create_container';
 
 class ListingShow extends React.Component {
   constructor(props){
@@ -21,7 +21,7 @@ class ListingShow extends React.Component {
   render() {
 
     const listing = this.props.listing;
-    console.log(this.reviews);
+    console.log(this.props);
 
     return (
       <div className='show-listing-page'>
@@ -47,7 +47,7 @@ class ListingShow extends React.Component {
           </section>
 
 
-          <ReviewCreationForm/>
+          <ReviewCreationContainer />
 
         </div>
       </div>
