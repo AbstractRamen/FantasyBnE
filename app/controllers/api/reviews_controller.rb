@@ -3,7 +3,7 @@ class Api::ReviewsController < ApplicationController
 
   def index
     @reviews = Review.where(listing_id: params[:listing_id])
-    render :index
+    render :index, includes: :users
   end
 
   # def index
@@ -28,7 +28,8 @@ class Api::ReviewsController < ApplicationController
       :user_id,
       :reviews,
       :listing_id,
-      :author_id
+      :author_id,
+      :image
     )
   end
 

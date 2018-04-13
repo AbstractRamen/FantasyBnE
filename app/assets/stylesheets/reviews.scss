@@ -17,3 +17,20 @@
   padding-bottom: 20px;
   border-bottom: 1px solid #DBDBDB;
 }
+
+.review-author-pic {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #DBDBDB;
+  object-fit: scale-down;
+  background-size: contain;
+}
+
+.author {
+  flex-direction: row;
+  display: flex;
+}
+.review-author {
+  margin-left: 12px;
+}
