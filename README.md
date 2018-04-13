@@ -43,7 +43,7 @@ Fantasy BnE is a full-stack web application inspired by [AirBnB](https://www.air
 
 **Chosen Solution:** Grab the information from the first query. By taking advantage of the Rails associations within the controller, information of the model's associations could be sent along in the original action. This decreased the amount of fetches per listing show page from O(n) per review the listing had to grab a user picture for-- to O(1) where there was only one to fetch the specific listing and a second to grab all of its listings.
 
-#### User Value/Prioritization: What's the most important?
+#### User Value/Prioritization: What's important?
 **Problem:** AirBnB has a lot of functionality, but I wanted to focus only on the essentials in the timespan set. Important planning had to be made to determine what was quintessentially AirBnb, and what exactly was the service it provided.
 
 **Chosen Solution:** This question really forced a reevaluation of the popular service. Was booking really necessary? Was address? What was crucial and what was just "really really nice to have"? The conclusion I came to was that AirBnB at its core was a double-sided market, a place to connect hosts and guests. The most important thing then was that host had a way to communicate the details of their listings and guests had a way to find them. This led me to focus on listings and reviews. Listings gave hosts a way to showcase info and provide contact, while reviews allowed for guests to provide criticism and/or warn others.

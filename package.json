@@ -11,16 +11,18 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.4.1"
   },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "description": "A README about the approach to this application and the challenges faced.",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
   },
   "engines": {
     "node": "9.8.0",
