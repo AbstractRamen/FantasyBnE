@@ -131,7 +131,7 @@ class ListingCreationForm extends React.Component {
           <div>
           <p className='preview-text'>
             Preview your photo!
-          </p>
+          </p><br />
           <img className='preview-upload'
             src={this.state.imageUrl}/>
         </div>
