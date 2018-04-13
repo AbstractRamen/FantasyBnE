@@ -4,13 +4,15 @@ class ReviewCreationForm extends React.Component {
   constructor(props) {
     super(props);
 
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+
     if (this.props.currentUser) {
       this.state = {
         listing_id: this.props.match.params.id,
         body: '',
         author_id: this.props.currentUser.id
       };
-      this.handleSubmit = this.handleSubmit.bind(this);
     } else {
       this.state = {}
     }
@@ -34,7 +36,7 @@ class ReviewCreationForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`session-error-${i}`}>
+          <li key={`review-error-${i}`}>
             {error}
           </li>
         ))}
@@ -47,7 +49,6 @@ class ReviewCreationForm extends React.Component {
   }
 
   render() {
-
 
     return (
       <div className='review-creation-container'>

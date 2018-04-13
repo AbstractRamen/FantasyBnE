@@ -22,7 +22,7 @@ class ListingShow extends React.Component {
   render() {
 
     const listing = this.props.listing;
-    
+
     const background = {
       backgroundImage: 'url(' + listing.image_url + ')',
     };
