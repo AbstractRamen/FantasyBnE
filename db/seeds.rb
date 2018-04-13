@@ -27,6 +27,7 @@ d1 = Listing.create(user_id: d.id, name: 'Apple HQ', address: '1 Infinite Loop; 
 e1 = Listing.create(user_id: e.id, name: 'San Fransokyo', address: 'Pier 15 The Embarcadero, San Francisco, CA 94111', description: Faker::Lorem.paragraph(4))
 f1 = Listing.create(user_id: f.id, name: 'Mausoleum of the First Qin Emperor', address: 'Lintong District, Xi\'an, Shaanxi, China', description: Faker::Lorem.paragraph(4))
 g1 = Listing.create(user_id: g.id, name: 'Jurassic World', address: 'Kualoa Ranch, Oahu Hawaii', description: Faker::Lorem.paragraph(4))
+Listing.create(user_id: a.id, name: 'K', address: 'M', description: 'D', image: (File.open(File.join(Rails.root, 'app/assets/images/bermuda-triangle.jpg'))))
 
 Review.destroy_all
 

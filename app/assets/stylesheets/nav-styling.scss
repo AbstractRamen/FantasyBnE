@@ -18,9 +18,11 @@
 }
 
 .logo {
-  background-image: image-url('logo.png');
+  background-image: image-url('favicon.png');
   height: 40px;
   width: 40px;
+  object-fit: scale-down;
+  background-size: contain;
 }
 
 .nav-buttons {
