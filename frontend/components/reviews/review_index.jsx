@@ -9,7 +9,6 @@ class ReviewIndex extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = this.props.reviews
   }
 
   componentDidMount() {
@@ -18,7 +17,6 @@ class ReviewIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    debugger
     if(nextProps.values!==this.props.values)
       {this.props.fetchReviews(this.props.listingId.ownProps).then(() =>
       this.setState(this.props.reviews))}
@@ -26,7 +24,7 @@ class ReviewIndex extends React.Component {
 
   render() {
     const reviews = this.props.reviews;
-    console.warn(this.props.value);
+
 
     return (
       <section className="reviews">

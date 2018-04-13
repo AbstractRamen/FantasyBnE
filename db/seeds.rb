@@ -20,13 +20,13 @@ g = User.create(email: 'brycehoward@famous.actress', name: 'Bryce Dallas Howard'
 
 Listing.destroy_all
 
-a1 = Listing.create(user_id: a.id, name: 'Isekai', address: 'Bermuda Triangle', description: Faker::Lorem.paragraph(4))
-b1 = Listing.create(user_id: b.id, name: 'Mount Huaguo', address: 'Yuntai, Jiangsu, China', description: Faker::Lorem.paragraph(4))
-c1 = Listing.create(user_id: c.id, name: 'Hogwartz', address: 'Christ Church, St. Aldates, Oxford OX11DP', description: Faker::Lorem.paragraph(4))
-d1 = Listing.create(user_id: d.id, name: 'Apple HQ', address: '1 Infinite Loop; Cupertino, CA 95014', description: Faker::Lorem.paragraph(4))
-e1 = Listing.create(user_id: e.id, name: 'San Fransokyo', address: 'Pier 15 The Embarcadero, San Francisco, CA 94111', description: Faker::Lorem.paragraph(4))
-f1 = Listing.create(user_id: f.id, name: 'Mausoleum of the First Qin Emperor', address: 'Lintong District, Xi\'an, Shaanxi, China', description: Faker::Lorem.paragraph(4))
-g1 = Listing.create(user_id: g.id, name: 'Jurassic World', address: 'Kualoa Ranch, Oahu Hawaii', description: Faker::Lorem.paragraph(4))
+a1 = Listing.create(user_id: a.id, name: 'Isekai', address: 'Bermuda Triangle', description: Faker::Lorem.paragraph(14))
+b1 = Listing.create(user_id: b.id, name: 'Mount Huaguo', address: 'Yuntai, Jiangsu, China', description: Faker::Lorem.paragraph(14))
+c1 = Listing.create(user_id: c.id, name: 'Hogwartz', address: 'Christ Church, St. Aldates, Oxford OX11DP', description: Faker::Lorem.paragraph(14))
+d1 = Listing.create(user_id: d.id, name: 'Apple HQ', address: '1 Infinite Loop; Cupertino, CA 950114', description: Faker::Lorem.paragraph(14))
+e1 = Listing.create(user_id: e.id, name: 'San Fransokyo', address: 'Pier 15 The Embarcadero, San Francisco, CA 914111', description: Faker::Lorem.paragraph(14))
+f1 = Listing.create(user_id: f.id, name: 'Mausoleum of the First Qin Emperor', address: 'Lintong District, Xi\'an, Shaanxi, China', description: Faker::Lorem.paragraph(14))
+g1 = Listing.create(user_id: g.id, name: 'Jurassic World', address: 'Kualoa Ranch, Oahu Hawaii', description: Faker::Lorem.paragraph(14))
 Listing.create(user_id: a.id, name: 'K', address: 'M', description: 'D', image: (File.open(File.join(Rails.root, 'app/assets/images/bermuda-triangle.jpg'))))
 
 Review.destroy_all

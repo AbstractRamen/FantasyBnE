@@ -22,7 +22,7 @@ class ListingShow extends React.Component {
   render() {
 
     const listing = this.props.listing;
-    console.log(this.props);
+    
     const background = {
       backgroundImage: 'url(' + listing.image_url + ')',
     };
@@ -62,19 +62,3 @@ class ListingShow extends React.Component {
 }
 
 export default ListingShow;
-
-
-// {
-//   this.reviews.map((review, i) => {
-//       if (i <= 10) {
-//         return (
-//           <ReviewIndexItem
-//             key={review.id}
-//             review={review}
-//           />
-//         )
-//       }
-//     })
-//
-//
-// }

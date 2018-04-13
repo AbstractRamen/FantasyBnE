@@ -7,7 +7,7 @@ const ReviewIndexItem = ( {review} ) => {
     backgroundImage: 'url(' + review.image_url + ')',
   };
 
-  console.log(review);
+
   return (
     <div className="review-index-item">
       <div className='author'>
