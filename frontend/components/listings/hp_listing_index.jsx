@@ -31,7 +31,7 @@ class ListingIndex extends React.Component {
           <div className='listing-index-container'>
             <ul className='ul-wrapper'>
               {listings.map((listing, i) => {
-                  if (i <= 10) {
+                  if (i <= 20) {
                     return (
                       <ListingIndexItem
                         key={listing.id}
