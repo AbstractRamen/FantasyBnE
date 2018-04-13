@@ -15,6 +15,7 @@
   justify-content: space-between;
   padding: 20px;
   border-bottom: 1px solid #DBDBDB;
+  width: 100%;
 }
 
 .logo {
@@ -23,6 +24,8 @@
   width: 40px;
   object-fit: scale-down;
   background-size: contain;
+  position: absolute;
+  left: 15px;
 }
 
 .nav-buttons {
@@ -77,4 +80,25 @@
 
 .become-host {
   text-decoration: none;
+}
+
+.all-nav {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.footer {
+  position:fixed;
+  left:0px;
+  display: flex;
+  bottom:0px;
+  height:30px;
+  width:100%;
+  background-color: #DBDBDB;
+  justify-content: center;
+}
+
+.footer-links {
+  padding: 8px 0px 8px 0px;
 }
