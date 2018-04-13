@@ -29,8 +29,8 @@ const sessionLinks = (login, openModal) => (
       </div>
     </nav>
     <div className='footer'>
-      <Link className='footer-links' to=''>Github</Link> &nbsp;&nbsp;&nbsp;&nbsp;
-      <Link className='footer-links' to=''>Linkedin</Link>
+      <a className='footer-links' href='https://github.com/AbstractRamen'>Github</a> &nbsp;&nbsp;&nbsp;&nbsp;
+      <a className='footer-links' href='https://www.linkedin.com/in/jtcio/'>Linkedin</a>
     </div>
   </section>
 
