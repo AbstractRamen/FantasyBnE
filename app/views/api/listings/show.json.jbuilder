@@ -1,3 +1,4 @@
+
 json.extract! @listing, :id, :name, :address, :description, :user_id
 json.image_url asset_path(@listing.image.url)
 json.reviews do
@@ -7,4 +8,3 @@ json.reviews do
     end
   end
 end
-# json.reviews @listing.reviews.pluck(:id, :body)

@@ -6,18 +6,13 @@ Fantasy BnE is a full-stack web application inspired by [AirBnB](https://www.air
 
 ## Features
 
-- Backend to frontend user authentication
-    - Passwords are salted by BCrypt
-    - Demo account/login for easy sight preview
-
-    <picture of nav bar>
-
-- Create listings to show to the rest of the world
-- Review listings by other people and see what others before have said
 
 #### Authentication and protected actions
 - Users are able to create persistent accounts, sign-in, and sign-out
 - User-specific actions are protected and prompt unlogged visitors to log in
+- Passwords are hashed and salted by BCrypt
+
+![Protected Actions](https://media.giphy.com/media/1MXuT1G2T8WH0xoop1/giphy.gif)
 
 #### Listings
 
@@ -26,20 +21,28 @@ Fantasy BnE is a full-stack web application inspired by [AirBnB](https://www.air
 - Listing creation is protected and prompts users to login upon submit
 - File attachment via AWS allow for visual assets to be uploaded for listings
 
+![File Attachment](https://media.giphy.com/media/RkHKpW4T4dLh4zsmdI/giphy.gif)
+
 #### Reviews
 
 - Users can create and view reviews for individual listings
 - Reviews are protected and can only be created by logged-in users
+
+![Reviews](https://i.imgur.com/rsv4Qxl.png)
 
 ## Challenges
 
 #### Design: Simplifying and customizing design
 **Problem:**  Due to its nature of being a simplified model of AirBnB, many core features and assets of the original are not available for visual display in FantasyBnE. This presents a large challenge in how best to stay true to the visual theme and UX present in the current AirBnB without leaving large visual gaps for missing features.
 
+![UX](https://i.imgur.com/nRwfAke.jpg)
+
 **Chosen Solution:** One of the most important developments in AirBnB has been their recent foray into local experiences and restaurants and this is communicated across in their current layout. Since FantasyBnE only focuses listings, a top priority became distilling the current AirBnB UX to only its listing components and visualizing that in a simple workflow. I combined this with the wireframes available in this Github's wiki to refine not just the application's actual functionality but its aesthetic faithfulness to the original site.
 
 #### Technical: Rendering and information requests
 **Problem:** Some pages had very nested data requests. For example, a listing show page had to have not just information about itself through a fetchListing query, but also would immediately require information about all of its reviews-- of which would require also a query to all of their authors for their profile picture. This made logic harder to follow and created the need for a lot of boilerplate code for very small one-time-use items.
+
+![Json](https://i.imgur.com/wtYJdUB.png)
 
 **Chosen Solution:** Grab the information from the first query. By taking advantage of the Rails associations within the controller, information of the model's associations could be sent along in the original action. This decreased the amount of fetches per listing show page from O(n) per review the listing had to grab a user picture for-- to O(1) where there was only one to fetch the specific listing and a second to grab all of its listings.
 
