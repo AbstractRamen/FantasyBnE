@@ -29,12 +29,12 @@ class ListingCreationForm extends React.Component {
 
       if (this.state.imageFile) {
         formData.append("listing[image]", imgFile);
-        this.props.makeListing(formData).then((result)=> {
-          if (result) this.props.history.push('/')
+        this.props.makeListing(formData).then((listingId)=> {
+          if (listingId) this.props.history.push(`/listing/${listingId}`)
         })
       } else {
-        this.props.makeListing(formData).then((result)=> {
-          if (result) this.props.history.push('/')
+        this.props.makeListing(formData).then((listingId)=> {
+          if (listingId) this.props.history.push(`/listing/${listingId}`)
         })
       }
     } else {

@@ -56,9 +56,10 @@
 
 .switch-session {
   color: #008489;
+  text-decoration: underline;
 }
 
 .switch-session:hover {
   cursor: pointer;
-  text-decoration: underline;
+  // text-decoration: underline;
 }

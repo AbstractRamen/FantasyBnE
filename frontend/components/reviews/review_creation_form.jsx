@@ -5,8 +5,6 @@ class ReviewCreationForm extends React.Component {
     super(props);
 
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-
     if (this.props.currentUser) {
       this.state = {
         listing_id: this.props.match.params.id,
@@ -17,6 +15,7 @@ class ReviewCreationForm extends React.Component {
       this.state = {}
     }
 
+    this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
@@ -29,7 +28,14 @@ class ReviewCreationForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const review = Object.assign({}, this.state);
-    this.props.createReview(review)
+    this.props.createReview(review).then(() => (
+      this.setState({
+        body: ''
+      })
+    )).then(() => {
+      const lastReview = document.getElementById('last-review');
+      lastReview.scrollIntoView({ behavior: "smooth" });
+    })
   }
 
   renderErrors() {
@@ -54,7 +60,7 @@ class ReviewCreationForm extends React.Component {
       <div className='review-creation-container'>
         <p className='review-intro'>
           We're glad you enjoyed your stay! What would you like to tell others about it?
-        </p>
+        </p> <br />
         <div className="review-errors">
           {this.renderErrors()}
         </div>
@@ -65,7 +71,7 @@ class ReviewCreationForm extends React.Component {
             onChange={this.update('body')}
             placeholder='What do you want to say?'
             type='text'
-            value={this.body} />
+            value={this.state.body} />
           <input className="review-submit" type="submit" value='Submit Review!' />
         </form>
       </div>

@@ -42,7 +42,7 @@ export const createListing = (listing) => dispatch => (
   APIUtil.createListing(listing).then(
     listing => {
       dispatch(receiveListing(listing));
-      return true;
+      return listing.id;
     },
     err => {
       dispatch(receiveErrors(err.responseJSON));

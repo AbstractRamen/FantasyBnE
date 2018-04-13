@@ -53,7 +53,6 @@ class ListingShow extends React.Component {
 
           <ReviewCreationContainer />
           <ReviewIndexContainer />
-
         </div>
       </div>
     )

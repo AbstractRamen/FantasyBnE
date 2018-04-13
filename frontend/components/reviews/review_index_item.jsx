@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ReviewIndexItem = ( {review} ) => {
+const ReviewIndexItem = ( {review, id} ) => {
 
   const background = {
     backgroundImage: 'url(' + review.image_url + ')',
@@ -9,7 +9,7 @@ const ReviewIndexItem = ( {review} ) => {
 
 
   return (
-    <div className="review-index-item">
+    <div className="review-index-item" id={id}>
       <div className='author'>
         <div className='review-author-pic' style={background}></div>
         <div className='blurb-container'>

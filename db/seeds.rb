@@ -52,3 +52,4 @@ al = Review.create(author_id: stinson.id, listing_id: mt.id, body: Faker::HowIMe
 am = Review.create(author_id: stinson.id, listing_id: maso.id, body: Faker::HowIMetYourMother.quote)
 an = Review.create(author_id: stinson.id, listing_id: maso.id, body: Faker::HowIMetYourMother.quote)
 ao = Review.create(author_id: stinson.id, listing_id: mt.id, body: Faker::HowIMetYourMother.quote)
+ap = Review.create(author_id: stinson.id, listing_id: hogwartz.id, body: Faker::HowIMetYourMother.quote)
