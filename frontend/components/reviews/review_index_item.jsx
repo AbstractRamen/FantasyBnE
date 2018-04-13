@@ -8,7 +8,7 @@ const ReviewIndexItem = ( {review} ) => {
     <div className="review-index-item">
       <div className='review-author'>
         {review.name}
-      </div>
+      </div>< br/>
       <div className='review-body'>
         {review.body}
       </div>

@@ -4,13 +4,19 @@ class ReviewCreationForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      listing_id: this.props.match.params.id,
-      body: '',
-      author_id: this.props.currentUser.id
+    if (this.props.currentUser) {
+      this.state = {
+        listing_id: this.props.match.params.id,
+        body: '',
+        author_id: this.props.currentUser.id
       };
       this.handleSubmit = this.handleSubmit.bind(this);
-  }
+    } else {
+      this.state = {}
+    }
+
+    }
+
 
   update(field) {
     return e => this.setState({
@@ -41,7 +47,7 @@ class ReviewCreationForm extends React.Component {
   }
 
   render() {
-    
+
 
     return (
       <div className='review-creation-container'>
@@ -54,7 +60,7 @@ class ReviewCreationForm extends React.Component {
         <form className='review-create-form'
           onSubmit={this.handleSubmit}>
           <textarea
-            className='review-body'
+            className='review-create-body'
             onChange={this.update('body')}
             placeholder='What do you want to say?'
             type='text'
