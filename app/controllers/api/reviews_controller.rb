@@ -29,7 +29,8 @@ class Api::ReviewsController < ApplicationController
       :reviews,
       :listing_id,
       :author_id,
-      :image
+      :image,
+      :created_at
     )
   end
 

@@ -33,4 +33,22 @@
 }
 .review-author {
   margin-left: 12px;
+  font-size: 17px;
+}
+
+.blurb-container {
+  flex-direction: column;
+}
+
+.created-date {
+  margin-top: 6px;
+  margin-left: 12px;
+  font-size: 14px;
+}
+
+.review-body {
+  font-size: 17px;
+  letter-spacing: 0.2px;
+  font-weight: 300;
+  line-height: 22px;
 }
