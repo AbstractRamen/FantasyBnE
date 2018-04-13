@@ -9,6 +9,26 @@
 
 }
 
+.splash-main {
+  background-image: image-url('mystic.jpeg');
+  height: 600px;
+  object-fit: contain;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.caption {
+  color: white;
+  width: 100%;
+  align-self: center;
+  font-size: 32px;
+  font-style: inherit;
+  font-weight: 700;
+}
+
 .ul-wrapper {
   flex-wrap: wrap;
   display: flex;

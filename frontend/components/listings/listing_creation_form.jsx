@@ -123,8 +123,13 @@ class ListingCreationForm extends React.Component {
           </div>
         </div>
         <div className='create-list-right'>
+          <div>
+          <p className='preview-text'>
+            Preview your photo!
+          </p>
           <img className='preview-upload'
             src={this.state.imageUrl}/>
+        </div>
         </div>
       </div>
     )
