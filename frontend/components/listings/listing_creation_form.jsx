@@ -108,7 +108,7 @@ class ListingCreationForm extends React.Component {
               placeholder='Where is your place?'
               /><br/>
             <input
-              className='listing-input'
+              className='listing-input upload'
               onChange={this.updateFile}
               type='file'
               /><br />
