@@ -31,26 +31,31 @@ export const receiveErrors = errors => ({
 })
 
 export const fetchReviews = (id) => dispatch => (
-  APIUtil.fetchReviews(id).then(reviews => dispatch(receiveReviews(reviews)))
+  APIUtil.fetchReviews(id).then(
+    reviews => dispatch(receiveReviews(reviews)))
 )
 
 export const fetchReview = (id) => dispatch => (
-  APIUtil.fetchReview(id).then(review => dispatch(receiveReview(review)))
+  APIUtil.fetchReview(id).then(
+    review => dispatch(receiveReview(review)))
 )
 
 export const createReview = (review) => dispatch => (
-  APIUtil.createReview(review).then(review => (dispatch(receiveReview(review)
+  APIUtil.createReview(review).then(
+    review => (dispatch(receiveReview(review)
 )), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 )
 
 export const deleteReview = (review) => dispatch => (
-  APIUtil.deleteReview(review.id).then(review => dispatch(removeReview(review)))
+  APIUtil.deleteReview(review.id).then(
+    review => dispatch(removeReview(review)))
 )
 
 export const updateReview = (review) => dispatch => (
-  APIUtil.updateReview(review.id).then(review => (dispatch(receiveReview(review)
+  APIUtil.updateReview(review.id).then(
+    review => (dispatch(receiveReview(review)
 )), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
