@@ -31,11 +31,13 @@ export const receiveErrors = errors => ({
 })
 
 export const fetchListings = () => dispatch => (
-  APIUtil.fetchListings().then(listings => dispatch(receiveListings(listings)))
+  APIUtil.fetchListings().then(listings => dispatch(
+    receiveListings(listings)))
 )
 
 export const fetchListing = (id) => dispatch => (
-  APIUtil.fetchListing(id).then(listing => dispatch(receiveListing(listing)))
+  APIUtil.fetchListing(id).then(listing => dispatch(
+    receiveListing(listing)))
 )
 
 export const createListing = (listing) => dispatch => (
@@ -52,11 +54,13 @@ export const createListing = (listing) => dispatch => (
 )
 
 export const deleteListing = (listing) => dispatch => (
-  APIUtil.deleteListing(listing.id).then(listing => dispatch(removeListing(listing)))
+  APIUtil.deleteListing(listing.id).then(
+    listing => dispatch(removeListing(listing)))
 )
 
 export const updateListing = (listing) => dispatch => (
-  APIUtil.updateListing(listing.id).then(listing => (dispatch(receiveListing(listing)
+  APIUtil.updateListing(listing.id).then(
+    listing => (dispatch(receiveListing(listing)
 )), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
