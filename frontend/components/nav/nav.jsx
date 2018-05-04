@@ -7,6 +7,7 @@ const sessionLinks = (login, openModal) => (
 
         <Link className='nav-buttons' to='/'>
           <div className='logo'></div>
+          <div className='title-banner'>FantasyBnE</div>
         </Link>
 
       <div className='none-user-nav-right'>

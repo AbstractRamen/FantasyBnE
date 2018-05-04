@@ -24,8 +24,15 @@
   width: 40px;
   object-fit: scale-down;
   background-size: contain;
-  position: absolute;
-  left: 15px;
+  // position: absolute;
+  margin-left: 15px;
+}
+
+.title-banner {
+  width: auto;
+  color: black;
+  text-decoration: none;
+  // position: absolute;
 }
 
 .nav-buttons {
