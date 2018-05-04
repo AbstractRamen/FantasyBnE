@@ -21,7 +21,7 @@ class ListingIndex extends React.Component {
       <div className='listing-container'>
         <div className='splash-main'>
           <p className='caption'>
-            Explore and rest
+            Explore and rest at your favorite fantasy setting!
           </p>
         </div>
         <section className="listings">
