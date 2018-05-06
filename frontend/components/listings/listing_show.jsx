@@ -17,6 +17,7 @@ class ListingShow extends React.Component {
     )
 
     this.reviews = this.props.listing.reviews || []
+    window.scrollTo(0, 0)
   }
 
   render() {
