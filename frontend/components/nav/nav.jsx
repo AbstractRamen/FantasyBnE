@@ -43,18 +43,26 @@ const personalGreeting = (currentUser, logout) => (
 
         <Link className='nav-buttons' to='/'>
           <div className='logo'></div>
-          <div className='title-banner'>FantasyBnE</div>
+          <div className='title-banner'>
+            FantasyBnE
+          </div>
         </Link>
 
       <div className='none-user-nav-right'>
         <div className='nav-buttons-greet' >
-          <h2 className="header-name">Hi, {currentUser.name}!</h2>
+          <h2 className="header-name">
+            Hi, {currentUser.name}!
+          </h2>
         </div>
         <div className='nav-buttons'>
-          <Link className='become-host' to='/listings/new'>Become a host</Link>
+          <Link className='become-host' to='/listings/new'>
+            Become a host
+          </Link>
         </div>
         <div className='nav-buttons' onClick={logout}>
-          <Link className='become-host' to='/'>Log Out</Link>
+          <Link className='become-host' to='/'>
+            Log Out
+          </Link>
         </div>
         <div className='nav-buttons-avatar'>
           <img className='avatar'
@@ -63,8 +71,12 @@ const personalGreeting = (currentUser, logout) => (
       </div>
     </nav>
     <div className='footer'>
-      <a className='footer-links' href='https://github.com/AbstractRamen'>Github</a> &nbsp;&nbsp;&nbsp;&nbsp;
-      <a className='footer-links' href='https://www.linkedin.com/in/jtcio/'>Linkedin</a>
+      <a className='footer-links' href='https://github.com/AbstractRamen'>
+        Github
+      </a> &nbsp;&nbsp;&nbsp;&nbsp;
+      <a className='footer-links' href='https://www.linkedin.com/in/jtcio/'>
+        Linkedin
+      </a>
     </div>
   </section>
 );
